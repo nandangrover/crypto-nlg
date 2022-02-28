@@ -1,0 +1,36 @@
+.popUp {
+  z-index: 100;
+  display: inline-flex;
+  position: relative;
+  top: -2px;
+  left: 10px;
+}
+.modalHolder {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 4px;
+}
+.searchIcon {
+  display: inline-flex;
+  vertical-align: middle;
+  /* top: -4px; */
+  padding: 0 10px;
+  position: relative;
+  cursor: pointer;
+}
+.inputArea {
+  display: inline-flex;
+  width: 89px;
+  margin: auto;
+  background-color: transparent;
+  height: 30px;
+  border: none;
+  position: relative;
+  color: white;
+  top: 0px;
+  outline: none;
+  vertical-align: middle;
+}
+::placeholder {
+  color: white;
+}

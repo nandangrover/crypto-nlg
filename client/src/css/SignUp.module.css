@@ -1,0 +1,21 @@
+.logo {
+  text-align: center;
+  padding: 50px;
+  font-size: 30px;
+  font-family: monospace;
+  color: #de4856;
+  font-weight: bold;
+}
+.authenticateModal {
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 690px;
+  text-align: center;
+}
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 20px;
+}

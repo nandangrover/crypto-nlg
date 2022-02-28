@@ -1,0 +1,25 @@
+.remove-btn {
+  margin-right: 0.5rem;
+}
+.fade-enter {
+  opacity: 0.01;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0.01;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+@font-face {
+  font-family: 'RobotoSlab-Regular';
+  src: url('assets/fonts/RobotoSlab-Regular/RobotoSlab-Regular.eot?#iefix') format('embedded-opentype'),  url('assets/fonts/RobotoSlab-Regular/RobotoSlab-Regular.woff') format('woff'), url('assets/fonts/RobotoSlab-Regular/RobotoSlab-Regular.ttf')  format('truetype'), url('assets/fonts/RobotoSlab-Regular/RobotoSlab-Regular.svg#RobotoSlab-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

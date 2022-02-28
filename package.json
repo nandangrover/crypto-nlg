@@ -1,0 +1,43 @@
+{
+  "name": "mernshopping",
+  "version": "1.0.0",
+  "description": "MERN Sample Project",
+  "main": "index.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nandangrover/MERN-Shopping-List.git"
+  },
+  "author": "Nandan Grover",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nandangrover/MERN-Shopping-List/issues"
+  },
+  "homepage": "https://github.com/nandangrover/MERN-Shopping-List#readme",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "body-parser": "^1.19.2",
+    "cloudinary": "^1.13.2",
+    "concurrently": "^7.0.0",
+    "express": "^4.16.4",
+    "is-empty": "^1.2.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.2",
+    "multer": "^1.4.1",
+    "multer-storage-cloudinary": "^2.2.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "striptags": "^3.2.0",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

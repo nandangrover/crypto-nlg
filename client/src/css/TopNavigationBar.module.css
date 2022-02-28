@@ -1,0 +1,124 @@
+/* .navHead {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  display: flex; */
+  /* vertical-align: middle; */
+  /* background-color: #ef5867;
+  height: 65px; */
+  /* box-sizing: content-box; */
+/* } */
+.navHead {
+  overflow: hidden;
+  background-color: #de4856;
+  padding: 10px;
+}
+.leftNav {
+  float: right;
+  display: inline-flex;
+}
+.logo {
+  font-size: 17px;
+  box-sizing: border-box;
+  display: inline-flex;
+  width: 170px;
+  height: -90px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  margin-left: 20px;
+  padding-top: 14px;
+}
+.links:hover {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.links{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 17px;
+  cursor: pointer;
+}
+.svgSearchIcon {
+  position: relative;
+  top: 13px;
+  left: 20px;
+  display: inline-flex;
+  cursor: pointer;
+}
+.hiddenIcons {
+  display: inline-flex;
+  /* color: black; */
+  padding-left: 10px;
+}
+.signUp {
+  display: -webkit-box;
+    /* background-color: white; */
+    top: 12px;
+    color: #ffffff;
+    position: relative;
+}
+.navHead .icon {
+  display: none;
+  color: white;
+  font-size: 20px;
+  top: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.links:hover {
+  background-color: #942b35;
+}
+/* .leftNav {
+  display: inline-flex;
+    padding-left: 30px;
+    padding-right: 130px;
+    padding-top: 20px;
+} */
+/* .links {
+  display: table-cell;
+  padding-right: 20px;
+  color: white;
+  font-size: 19px;
+} */
+
+@media screen and (max-width: 600px) {
+  .navHead .links:not(:first-child) {display: none;}
+  /* .navHead .links:first-child { padding-right: 60px;} */
+  .navHead .icon {
+    float: right;
+    display: block;
+  }
+  .navHead .leftNav {
+    float: right;
+    display: inline-flex;
+  }
+  .navHead .hiddenIcons {
+    display: inline-flex;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navHead.responsive {position: relative;}
+  .navHead.responsive .icon {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+  }
+  .navHead.responsive .leftNav {
+    float: none;
+    display: block;
+  }
+  .navHead.responsive .links {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .navHead.responsive .hiddenIcons {
+    display: none;
+  }
+}

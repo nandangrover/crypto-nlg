@@ -1,0 +1,73 @@
+.ContentHolder {
+  height: 100%;
+  /* background-color: blue; */
+  margin-top: 80px;
+}
+.article {
+  display: inline-block;
+  /* width: 20%; */
+  margin: auto;
+  width: 30%;
+  /* padding: 20px; */
+  margin: 0 0px 0 20px;
+}
+.horizontalLine {
+  margin: 50px 0 50px 0px;
+  border: 1px solid gray;
+}
+.loader {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  /* height: 100px; */
+  margin-top: 160px;
+}
+.titleImage {
+  width: 100%px;
+  height: 140px;
+  cursor: pointer;
+}
+.title {
+  padding: 20px 0 0 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+.date {
+  color: gray;
+  font-size: 13px;
+}
+.userName {
+  color: #de4856;
+}
+.articleDesc {
+  padding: 10px 0 0 0;
+  color: gray;
+}
+.profilePic {
+  width: 20%;
+  height: 20%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.userProfile {
+  display: table;
+  margin-top: 10px;
+}
+.userInfoWrapper {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .article {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 30px;
+    border-bottom: 2px solid gray;
+    padding: 20px;
+  }
+  .horizontalLine {
+   display: none;
+  }
+}

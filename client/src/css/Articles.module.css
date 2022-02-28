@@ -1,0 +1,65 @@
+.loader {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  /* height: 100px; */
+  margin-top: 160px;
+}
+img {
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+.article {
+  margin-top: 60px;
+  padding: 0px 130px;
+}
+.title {
+  text-align: left;
+  font-size: 35px;
+  font-family: RobotoSlab-Regular;
+}
+.titleImage {
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+.articleDesc {
+  margin-top: 15px;
+  /* font-family: RobotoSlab-Regular; */
+  font-size: 16px;
+  margin-bottom: 60px;
+  text-align: center;
+  color: gray;
+}
+.profilePic {
+  width: 8%;
+  height: 8%;
+  /* margin: 30px; */
+  display: inline-block;
+  vertical-align: middle;
+}
+.userProfile {
+  margin: auto;
+  position: relative;
+  display: table;
+  margin: 10px 0px 39px 0px;
+}
+.userName {
+  color: #de4856;
+}
+.userInfoWrapper {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.imageWrapper {
+  margin: auto;
+  display: table;
+}
+
+@media screen and (max-width: 600px) {
+  .article {
+    padding: 0px 20px;
+  }
+}

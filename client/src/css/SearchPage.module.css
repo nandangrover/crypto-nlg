@@ -1,0 +1,88 @@
+.modalHolder {
+  display: table;
+  margin: auto;
+  margin-top: 50px;
+  border: 1px solid gray;
+  padding: 10px;
+  border-radius: 10px;
+}
+.searchIcon {
+  display: table-cell;
+  cursor: pointer;
+  border-left: 2px solid #de4856;
+  padding-left: 6px;
+}
+.inputArea {
+  display: table-cell;
+  border: none;
+  /* border-bottom: 1px solid gray; */
+  width: 320px;
+  outline: none;
+}
+.inputArea::placeholder {
+  color: gray;
+}
+.ContentHolder {
+  height: 100%;
+  margin-top: 80px;
+}
+.article {
+  display: inherit;
+  margin: auto;
+  width: 50%;
+  margin-bottom: 30px;
+}
+.loader {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  /* height: 100px; */
+  margin-top: 160px;
+}
+.titleImage {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.title {
+  padding: 20px 0 0 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+.date {
+  color: gray;
+  font-size: 13px;
+}
+.userName {
+  color: #de4856;
+}
+.articleDesc {
+  padding: 10px 0 0 0;
+  color: gray;
+}
+.profilePic {
+  width: 20%;
+  height: 20%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.userProfile {
+  display: table;
+  margin-top: 10px;
+}
+.userInfoWrapper {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .article {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+  .inputArea {
+    width: 100%;
+  }
+}
