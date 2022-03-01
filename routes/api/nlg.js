@@ -2,6 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const router = express.Router();
 const fs = require("fs");
+const model_init = require("../../utils/model_initiator");
 // const { stripHtml } = require("string-strip-html");
 // const btc = require("../../config/btc.json");
 
@@ -27,28 +28,26 @@ router.get("/", (req, res) => {
 
       const options2 = {
         method: "POST",
-        url: "https://rewriter-paraphraser-text-changer-multi-language.p.rapidapi.com/rewrite",
+        url: "https://api.nlpcloud.io/v1/gpu/gpt-j/generation",
         headers: {
           "content-type": "application/json",
-          "x-rapidapi-host":
-            "rewriter-paraphraser-text-changer-multi-language.p.rapidapi.com",
-          "x-rapidapi-key":
-            "1586fbc12bmsh35e444ee1dbc172p1f57bdjsne997fa52754e",
+          "Authorization":
+            "Token f701781ebfa97612580d11eae11ac9c2157e2db9"
         },
         data: {
-          language: "en",
-          strength: 3,
+          max_length: 512,
           text: result,
         },
       };
 
-      return axios.request(options2)
+      // return axios.request(options2)
+      model_init(result, res);
     // res.json(response.data);
     })
-    .then(function (_response) {
-        console.log(_response.data);
-        res.json(_response.data);
-      })
+    // .then(function (_response) {
+    //     console.log(_response.data);
+    //     res.json(_response.data);
+    //   })
     .catch(function (error) {
       console.error(error);
       res.status(500).json(error);
