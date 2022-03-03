@@ -7,6 +7,7 @@ const model_init = require("../../utils/model_initiator");
 // const btc = require("../../config/btc.json");
 
 router.get("/:coin", (req, res) => {
+  res.setTimeout(0);
   // const fs = require('fs');
 
   const coin_data = JSON.parse(fs.readFileSync(`config/${req.params.coin}.json`, "utf8"));
