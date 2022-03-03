@@ -3,4 +3,6 @@ sentencepiece
 python-Levenshtein 
 fuzzywuzzy
 sentence-transformers
+pandas
+protobuf
 git+https://github.com/PrithivirajDamodaran/Parrot_Paraphraser.git
