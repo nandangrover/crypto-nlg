@@ -1,0 +1,6 @@
+transformers 
+sentencepiece
+python-Levenshtein 
+fuzzywuzzy
+sentence-transformers
+git+https://github.com/PrithivirajDamodaran/Parrot_Paraphraser.git
