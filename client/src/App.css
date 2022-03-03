@@ -1,21 +1,25 @@
-.remove-btn {
-  margin-right: 0.5rem;
-}
-.fade-enter {
-  opacity: 0.01;
-}
-.fade-enter-active {
-  opacity: 1;
-  transition: opacity 1000ms ease-in;
-}
-.fade-exit {
-  opacity: 1;
-}
-.fade-exit-active {
-  opacity: 0.01;
-}
+
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: #202028;
+}
+.heading {
+  color: #FFF;
+}
+.coinCard {
+  cursor: pointer;
+}
+.coinName {
+  text-align: center;
+    font-weight: bold;
+    font-size: 28px;
+    margin-top: 10px;
+}
+.coinSymbol {
+  line-height: 130px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
 }
 @font-face {
   font-family: 'RobotoSlab-Regular';
