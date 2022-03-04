@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import CoinInfo from "./CoinInfo";
+import Footer from "./Footer";
 import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 
@@ -49,6 +49,7 @@ const DashBoard = () => {
           </Paper>
         ))}
       </Box>
+      <Footer />
     </div>
   );
 };

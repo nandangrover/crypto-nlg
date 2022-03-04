@@ -4,6 +4,7 @@ import { BrowserRouter as Router, useParams } from "react-router-dom";
 // import CssBaseline from "@mui/material/CssBaseline";
 // import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import Footer from "./Footer";
 // import Paper from "@mui/material/Paper";
 
 const CoinInfo = () => {
@@ -27,17 +28,38 @@ const CoinInfo = () => {
         <br />
         {data.nlg ? (
           <div>
-          <Typography
-            variant="h4"
-            component="h2"
-            className="heading"
-            align="center"
-          >
-            {data.json.coinInfo.name}
-          </Typography>
-          <div className="summary">
-            {data.nlg.summary}
-          </div>
+            <br />
+            <Typography variant="h4" component="h2" className="heading">
+              {data.json.coinInfo.name}
+            </Typography>
+            <br />
+            <div className="coininfo-container">
+              <div className="summary">
+                <div className="coininfo-heading">Summary</div>
+                <br />
+                {data.nlg.summary}
+              </div>
+              <br />
+              <div className="sentiment">
+                <div className="coininfo-heading">Sentiment</div>
+                <br />
+                {data.nlg.sentiment}
+              </div>
+              <br />
+
+              <div className="technical">
+                <div className="coininfo-heading">Technical</div>
+                <br />
+                {data.nlg.technical}
+              </div>
+              <br />
+              <div className="recommendation">
+                <div className="coininfo-heading">Recommendation</div>
+                <br />
+                {data.nlg.recommendation}
+              </div>
+            </div>
+            <Footer />
           </div>
         ) : (
           <div></div>
