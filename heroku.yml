@@ -1,4 +1,0 @@
-build:
-  docker:
-    web: client/Dockerfile.web
-    worker: server/Dockerfile.worker
