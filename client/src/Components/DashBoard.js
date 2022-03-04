@@ -47,7 +47,9 @@ const DashBoard = () => {
         }}
       >
         {data.map((item) => (
-          <Paper key={item.symbol} elevation={3} className="coinCard" >
+          <Paper key={item.symbol} elevation={3} className="coinCard" onClick={async (event) => {
+            navigate(`${item.symbol}`, { state: { symbol: item.symbol } });
+          }}>
             <div className="coinName">{item.name}</div>
             <div className="coinSymbol">{item.symbol}</div>
           </Paper>
