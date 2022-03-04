@@ -27,7 +27,7 @@ COPY package-lock.json /opt/server_app
 COPY requirements.txt /opt/server_app
 
 USER root
-RUN pip3 install -r requirements.txt
+# RUN pip3 install -r requirements.txt
 RUN rm -rf node_modules/ && npm cache clean --force && npm install --no-optional && npm prune && npm dedupe
 
 HEALTHCHECK --interval=30s CMD node healthcheck.js
