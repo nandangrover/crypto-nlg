@@ -5,21 +5,11 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import CoinInfo from "./CoinInfo";
 import Typography from "@mui/material/Typography";
-
-// const registerUser = (userData, history) => dispatch => {
-//   axios
-//     .post("/api/nlg")
-//     .then(res => history.push("/privateroute/avadakedavara/login")) // re-direct to login on successful register
-//     .catch(err =>
-//       dispatch({
-//         type: GET_ERRORS,
-//         payload: err.response.data
-//       })
-//     );
-// };
+import { useNavigate } from "react-router-dom";
 
 const DashBoard = () => {
   const [data, setData] = useState([]);
+  let navigate = useNavigate();
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
@@ -31,6 +21,12 @@ const DashBoard = () => {
         setData(response);
       }); // re-direct to login on successful register
   }, []);
+
+  function handleClick(symbol) {
+    // let navigate = useNavigate();
+    // history.push(`/${symbol}`);
+    navigate(`/${symbol}`);
+  }
 
   return (
     <div>
@@ -51,7 +47,7 @@ const DashBoard = () => {
         }}
       >
         {data.map((item) => (
-          <Paper key={item.symbol} elevation={3} className="coinCard">
+          <Paper key={item.symbol} elevation={3} className="coinCard" >
             <div className="coinName">{item.name}</div>
             <div className="coinSymbol">{item.symbol}</div>
           </Paper>
