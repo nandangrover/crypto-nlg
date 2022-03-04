@@ -1,7 +1,7 @@
 {
   "name": "crypto-nlg",
   "version": "1.0.0",
-  "description": "MERN Sample Project",
+  "description": "Crypto NLG",
   "main": "index.js",
   "scripts": {
     "client-install": "npm install --prefix client",
@@ -11,16 +11,9 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/nandangrover/MERN-Shopping-List.git"
-  },
   "author": "Nandan Grover",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/nandangrover/MERN-Shopping-List/issues"
-  },
-  "homepage": "https://github.com/nandangrover/MERN-Shopping-List#readme",
+  "homepage": "https://crypto-nlg.herokuapp.com/",
   "dependencies": {
     "axios": "^0.26.0",
     "body-parser": "^1.19.2",

@@ -1,36 +1,36 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, useParams } from "react-router-dom";
-// import axios from "axios";
-// import CssBaseline from "@mui/material/CssBaseline";
-// import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Footer from "./Footer";
-// import Paper from "@mui/material/Paper";
+import CandleStickChartWithRSIIndicator from "./CandleStickChartWithRSIIndicator";
+import { getData } from "../utils/getData" 
 
 const CoinInfo = () => {
   const symbol = window.location.href.split("/").slice(-1)[0];
+  const lang = window.location.href.split("/").slice(-2)[0];
   const [data, setData] = useState({});
+
+  const [chartData, setChartData] = useState([]);
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    fetch(`api/nlg/${symbol}`)
+    fetch(`api/nlg/${symbol}?lang=${lang}`)
       .then((res) => {
         return res.json();
       })
       .then((response) => {
         setData(response);
+        setChartData(getData(response.json.history24h));
       }); // re-direct to login on successful register
   }, []);
 
   return (
-    console.log(data),
     (
       <div>
         <br />
-        {data.nlg ? (
+        {data.nlg &&  chartData.length ? (
           <div>
             <br />
             <Typography variant="h4" component="h2" className="heading">
-              {data.json.coinInfo.name}
+              {data.json.coinInfo.name} ({data.json.coinInfo.symbol})
             </Typography>
             <br />
             <div className="coininfo-container">
@@ -58,6 +58,8 @@ const CoinInfo = () => {
                 <br />
                 {data.nlg.recommendation}
               </div>
+              <br />
+              <CandleStickChartWithRSIIndicator data={chartData} type="hybrid" />
             </div>
             <Footer />
           </div>
