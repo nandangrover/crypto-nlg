@@ -28,4 +28,4 @@ HEALTHCHECK --interval=30s CMD node healthcheck.js
 # copy in our source code last, as it changes the most
 COPY --chown=node:node . /opt/client_app
 # npm run build for production
-CMD [ "npm", "start"]
+CMD npm start --bind 0.0.0.0:$PORT

@@ -27,7 +27,7 @@ COPY package-lock.json /opt/server_app
 COPY requirements.txt /opt/server_app
 
 USER root
-# RUN pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt
 RUN rm -rf node_modules/ && npm cache clean --force && npm install --no-optional && npm prune && npm dedupe
 
 HEALTHCHECK --interval=30s CMD node healthcheck.js
@@ -35,4 +35,4 @@ HEALTHCHECK --interval=30s CMD node healthcheck.js
 COPY --chown=node:node . /opt/server_app
 
 # npm start for production
-CMD [ "npm", "start"]
+CMD npm start --bind 0.0.0.0:$PORT
