@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
@@ -23,7 +23,13 @@ const DashBoard = () => {
 
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    axios.get("/api/nlg").then((res) => setData(res.data)); // re-direct to login on successful register
+    fetch("api/nlg")
+      .then((res) => {
+        return res.json();
+      })
+      .then((response) => {
+        setData(response);
+      }); // re-direct to login on successful register
   }, []);
 
   return (

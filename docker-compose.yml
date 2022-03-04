@@ -1,0 +1,43 @@
+version: '2.3'
+
+services:
+
+  client:
+    build:
+      context: ./client
+      # Change NODE_ENV=production for production build
+      args:
+        - NODE_ENV=development
+    ports:
+      - "3001:3000"
+      - "49153:49153"
+    volumes:
+      - ./client:/opt/client_app:delegated
+      - ./client/package.json:/opt/client_app/package.json
+      - ./client/package-lock.json:/opt/client_app/package-lock.json
+      - client_data:/opt/client_app/node_modules
+      - shared_data:/opt/client_app/build
+    environment:
+      - CHOKIDAR_USEPOLLING=true # To make it work in windows system. Remove during production
+  server:
+    build:
+      context: ./server
+      # Change NODE_ENV=production for production build
+      args:
+        - NODE_ENV=development
+    ports:
+      - "80:8080"
+      - "9229:9229"
+      - "9230:9230"
+    volumes:
+      - ./server:/opt/server_app/:delegated
+      - ./server/package.json:/opt/server_app/package.json
+      - ./server/package-lock.json:/opt/server_app/package-lock.json
+      - server_data:/opt/server_app/node_modules
+      - shared_data:/opt/server_app/build
+    links:
+      - client
+volumes:
+  server_data:
+  client_data:
+  shared_data:
