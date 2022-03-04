@@ -3,8 +3,7 @@ const axios = require("axios");
 const router = express.Router();
 const fs = require("fs");
 const model_init = require("../../utils/model_initiator");
-// const { stripHtml } = require("string-strip-html");
-// const btc = require("../../config/btc.json");
+
 router.get("/", (req, res) => {
   let merged = [];
   fs.readdir("config", (err, files) => {
@@ -22,7 +21,6 @@ router.get("/", (req, res) => {
 
 router.get("/:coin", (req, res) => {
   res.setTimeout(0);
-  // const fs = require('fs');
 
   const coin_data = JSON.parse(
     fs.readFileSync(`config/${req.params.coin}.json`, "utf8")
@@ -46,19 +44,6 @@ router.get("/:coin", (req, res) => {
     .then(function (response) {
       const { result } = response.data[0];
 
-      // const options2 = {
-      //   method: 'POST',
-      //   url: 'https://rewriter-paraphraser-text-changer-multi-language.p.rapidapi.com/rewrite',
-      //   headers: {
-      //     'content-type': 'application/json',
-      //     'x-rapidapi-host': 'rewriter-paraphraser-text-changer-multi-language.p.rapidapi.com',
-      //     'x-rapidapi-key': '1586fbc12bmsh35e444ee1dbc172p1f57bdjsne997fa52754e'
-      //   },
-      //   data: {language: 'en', strength: 3, text: result}
-      // };
-
-      // return axios.request(options2);
-      // model_init(result, res);
       const data = {
         nlg: {
           summary: `The live ${coin_data.coinInfo.name} price today is 0.88 USD with a 24-hour trading volume of 1,302,118,339.57 USD. The Cardano price went down by -1.21% in the last 24 hours. It gained 2.97% in the last 7 days. The Market cap of the Cardano is 28,354,543,219 USD with a maximum supply of 45 billion ADA coins.`,
@@ -72,7 +57,9 @@ router.get("/:coin", (req, res) => {
         lang: "en",
         json: coin_data,
       };
-      res.json(data);
+      // return axios.request(options2);
+      model_init(result, res, data);
+      // res.json(data);
     })
     // .then(function (_response) {
     //     console.log(_response.data);
