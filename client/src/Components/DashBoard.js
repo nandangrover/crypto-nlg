@@ -22,12 +22,6 @@ const DashBoard = () => {
       }); // re-direct to login on successful register
   }, []);
 
-  function handleClick(symbol) {
-    // let navigate = useNavigate();
-    // history.push(`/${symbol}`);
-    navigate(`/${symbol}`);
-  }
-
   return (
     <div>
       <br />
@@ -48,7 +42,7 @@ const DashBoard = () => {
       >
         {data.map((item) => (
           <Paper key={item.symbol} elevation={3} className="coinCard" onClick={async (event) => {
-            navigate(`${item.symbol}`, { state: { symbol: item.symbol } });
+            navigate(`${item.symbol.toLowerCase()}`);
           }}>
             <div className="coinName">{item.name}</div>
             <div className="coinSymbol">{item.symbol}</div>

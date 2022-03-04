@@ -6,6 +6,9 @@ body {
 .heading {
   color: #FFF;
 }
+.summary {
+  color: #FFF;
+}
 .coinCard {
   cursor: pointer;
 }

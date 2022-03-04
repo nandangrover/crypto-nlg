@@ -1,23 +1,50 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, useParams } from "react-router-dom";
 // import axios from "axios";
 // import CssBaseline from "@mui/material/CssBaseline";
 // import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 // import Paper from "@mui/material/Paper";
 
-
 const CoinInfo = () => {
-//   const [data, setData] = useState([]);
-
+  const symbol = window.location.href.split("/").slice(-1)[0];
+  const [data, setData] = useState({});
   // Similar to componentDidMount and componentDidUpdate:
-//   useEffect(() => {
-//     axios.get("/api/nlg").then((res) => setData(res.data)); // re-direct to login on successful register
-//   }, []);
+  useEffect(() => {
+    fetch(`api/nlg/${symbol}`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((response) => {
+        setData(response);
+      }); // re-direct to login on successful register
+  }, []);
 
   return (
-    <Container maxWidth="lg" className="coininfo">
-
-    </Container>
+    console.log(data),
+    (
+      <div>
+        <br />
+        {data.nlg ? (
+          <div>
+          <Typography
+            variant="h4"
+            component="h2"
+            className="heading"
+            align="center"
+          >
+            {data.json.coinInfo.name}
+          </Typography>
+          <div className="summary">
+            {data.nlg.summary}
+          </div>
+          </div>
+        ) : (
+          <div></div>
+        )}
+        <br />
+      </div>
+    )
   );
 };
 

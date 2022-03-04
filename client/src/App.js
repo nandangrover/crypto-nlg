@@ -10,7 +10,7 @@ const App = () => (
     <div>
       <Container maxWidth="lg" className="dashboard">
         <Routes>
-        <Route path="/" element={<DashBoard />} />
+        <Route exact path="/" element={<DashBoard />} />
         <Route path="/:id" element={<CoinInfo />} />
         </Routes>
       </Container>
