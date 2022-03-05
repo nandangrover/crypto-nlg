@@ -1,0 +1,14 @@
+steps:
+  - name: node
+    entrypoint: npm
+    args: ['run', 'heroku-postbuild']
+
+    # Install dependencies
+  - name: python
+    entrypoint: pip
+    args: ["install", "-r", "requirements.txt"]
+  # Docker Build
+
+  - name: node
+    entrypoint: npm
+    args: ['start']
