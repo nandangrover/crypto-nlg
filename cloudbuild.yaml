@@ -1,12 +1,13 @@
 steps:
+  - name: python:3.7
+    args: ['pip3','install', '-r', 'requirements.txt', '--user']
+  # Docker Build
+
   - name: node
     entrypoint: npm
     args: ['run', 'heroku-postbuild']
 
     # Install dependencies
-  - name: python:3.7
-    args: ['pip3','install', '-r', 'requirements.txt', '--user']
-  # Docker Build
 
   - name: node
     entrypoint: npm
