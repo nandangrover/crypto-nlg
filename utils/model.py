@@ -56,6 +56,3 @@ data = {
 
 print(json.dumps(data, separators=(',', ':')))
 sys.stdout.flush()
-
-# print(out_data)
-# print('Hello from python')
