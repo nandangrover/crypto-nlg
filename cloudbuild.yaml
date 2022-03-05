@@ -4,7 +4,7 @@ steps:
     args: ['run', 'heroku-postbuild']
 
     # Install dependencies
-  - name: python
+  - name: python:3.7
     args: ['pip3','install', '-r', 'requirements.txt', '--user']
   # Docker Build
 
