@@ -33,8 +33,10 @@ module.exports = function startParaphrasing(result, res, data_format) {
 
   PythonShell.run("utils/model.py", { args: [summary, sentiment, technical, recommendation] }, function (err, data) {
     if (err) console.log(err);
-    console.log(data);
-    res.json(data);
+    const parsedData = JSON.parse(data.toString());
+    // console.log(parsedData);
+    data_format.nlg = parsedData;
+    res.json(data_format);
   });
 
   // process.stdout.on('data', function (data) {

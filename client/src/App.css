@@ -7,6 +7,12 @@ body {
   text-align: center;
   margin: auto;
 }
+.loader {
+  width: 100%;
+    margin: auto;
+    text-align: center;
+    top: 40%;
+}
 .footer-left {
   display: table-cell;
   text-align: center;

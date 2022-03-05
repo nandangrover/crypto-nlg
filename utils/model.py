@@ -3,6 +3,7 @@ import torch
 import warnings
 import re
 import sys
+import json
 warnings.filterwarnings("ignore")
 
 def preprocess_data(data):
@@ -27,7 +28,7 @@ def run_model(phrases):
                                                    "%").replace("dot", ".").capitalize() + ". "
                 break
 
-    out_data = re.sub('\ 0', ' 0.', out_data)
+    out_data = re.sub('\ 0', ' 0.', out_data).replace('..', '.')
 
     return out_data
 
@@ -53,8 +54,8 @@ data = {
     "recommendation": coin_recommendation
 }
 
-print(data)
-
+print(json.dumps(data, separators=(',', ':')))
+sys.stdout.flush()
 
 # print(out_data)
 # print('Hello from python')

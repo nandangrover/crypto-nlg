@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import Typography from "@mui/material/Typography";
 import Footer from "./Footer";
 import CandleStickChartWithRSIIndicator from "./CandleStickChartWithRSIIndicator";
-import { getData } from "../utils/getData" 
+import { getData } from "../utils/getData"
+import Loader from "./Loader";
 
 const CoinInfo = () => {
   const symbol = window.location.href.split("/").slice(-1)[0];
@@ -12,7 +13,7 @@ const CoinInfo = () => {
   const [chartData, setChartData] = useState([]);
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
-    fetch(`api/nlg/${symbol}?lang=${lang}`)
+    fetch(`api/nlg/${symbol}`)
       .then((res) => {
         return res.json();
       })
@@ -64,7 +65,11 @@ const CoinInfo = () => {
             <Footer />
           </div>
         ) : (
-          <div></div>
+          <div className="loader">
+            <div className="coinSymbol">Model Running...</div>
+            <Loader />
+            <Footer />
+          </div>
         )}
         <br />
       </div>
