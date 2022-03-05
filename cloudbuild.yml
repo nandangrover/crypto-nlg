@@ -12,3 +12,7 @@ steps:
   - name: node
     entrypoint: npm
     args: ['start']
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: 'bash'
+    args: ['-c', 'gcloud config set app/cloud_build_timeout 1800 && gcloud app deploy my-service/my-config.yaml']
