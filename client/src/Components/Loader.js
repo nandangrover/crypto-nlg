@@ -42,8 +42,8 @@ export default function Loader() {
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 0.15));
-    }, 500);
+      setProgress((prevProgress) => (prevProgress >= 100 ? 0 : prevProgress + 20));
+    }, 300);
     return () => {
       clearInterval(timer);
     };
