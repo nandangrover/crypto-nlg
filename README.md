@@ -1,5 +1,5 @@
 <p align="center">
-  <img  alt="Crypto NLG" height="128px" width="128px" src="https://www.retresco.de/wp-content/uploads/2019/07/Bildschirmfoto-2019-07-16-um-16.53.44.png">
+  <img  alt="Crypto NLG" height="256px" width="603px" src="https://www.retresco.de/wp-content/uploads/2019/07/Bildschirmfoto-2019-07-16-um-16.53.44.png">
 </p>
 
 <h3 align="center"> Crypto NLG </h3>
@@ -11,6 +11,8 @@
 - Client: React
 - NLG Framework: Arria Studio + Paraphrasing Model
 ## Commands
+- `npm install`: Installs the server dependencies
+- `npm run client-install`: Installs the client dependencies
 - `npm run dev`: Starts the development server for frontend + backend
 ## Hosted links
 - https://crypto-nlg.herokuapp.com/
