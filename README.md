@@ -11,8 +11,11 @@
 - Client: React
 - NLG Framework: Arria Studio + Paraphrasing Model
 ## Commands
+- Node and npm is required to run the project
 - `npm install`: Installs the server dependencies
 - `npm run client-install`: Installs the client dependencies
 - `npm run dev`: Starts the development server for frontend + backend
+- Python 3.7 is required
+- `pip3 install -r requirements.txt`: Installs python dependencies
 ## Hosted links
 - https://crypto-nlg.herokuapp.com/
