@@ -81,7 +81,7 @@ const Documentation = () => {
 `;
 
   return (
-    console.log(data),
+    // console.log(data),
     (
       <div>
         <br />
